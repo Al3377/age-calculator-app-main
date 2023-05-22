@@ -1,0 +1,206 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+.body-color {
+  background-color: var(--off-white);
+}
+.app-main {
+  max-width: 320px;
+  max-height: 60%;
+  margin: 3.5rem 1rem;
+  background-color: white;
+  /* margin: 5% auto; */
+  border-radius: 25px 25px 100px 25px;
+  font-family: "Poppins", sans-serif;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.8rem;
+}
+
+.input-container {
+  max-width: 30%;
+}
+
+.input-box {
+  /* max-width: 5rem; */
+  font-size: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--light-grey);
+}
+
+.input-box::placeholder {
+  color: var(--smokey-grey);
+}
+.input-label {
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  color: var(--smokey-grey);
+}
+
+.logo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.logo__box {
+  background-color: var(--purple);
+  width: 50px;
+  border-radius: 50%;
+  padding: 6px;
+  margin: 1rem auto;
+}
+.logo__line {
+  border: 1px solid var(--light-grey);
+  margin: 1.4rem;
+}
+/* .logo__arrow {
+  padding: 5px;
+} */
+.output {
+  line-height: 1;
+  padding-bottom: 2rem;
+}
+
+.output__box {
+  font-size: 3.4rem;
+  font-weight: 700;
+  font-style: italic;
+  display: flex;
+  justify-content: left;
+  margin-left: 1rem;
+  color: var(--off-black);
+}
+
+.output__number {
+  color: var(--purple);
+  margin-right: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .app-main {
+    max-height: 80%;
+    max-width: 90%;
+  }
+
+  .input-row {
+    justify-content: left;
+    max-width: 60%;
+    gap: 2rem;
+    margin-left: 2rem;
+  }
+
+  .input-box {
+    font-size: 2rem;
+  }
+
+  .output {
+    margin-left: 2rem;
+  }
+  .output__box {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .app-main {
+    max-width: 60%;
+    border-radius: 35px 35px 200px 35px;
+  }
+  .input-box {
+    font-size: 2.5rem;
+  }
+  .output__box {
+    font-size: 7rem;
+  }
+}
