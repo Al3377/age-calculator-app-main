@@ -22,6 +22,18 @@ let numberOfDays = new Date(
   0
 ).getDate();
 
+let monthsInYear = 12;
+
+// Min Number Input
+let minNum = 1;
+
+// Seting Max and Min Attribute for Input
+dayInput.setAttribute("max", numberOfDays);
+dayInput.setAttribute("min", minNum);
+monthInput.setAttribute("max", monthsInYear);
+monthInput.setAttribute("min", minNum);
+yearInput.setAttribute("min", minNum);
+
 // Storing Value
 
 let birthDay, birthMonth, birthYear;
@@ -53,7 +65,7 @@ function calculate() {
     outputYears.textContent = `${years}`;
   }
   if (currentMonth < birthMonth) {
-    months = 12 - birthMonth + currentMonth;
+    months = monthsInYear - birthMonth + currentMonth;
   } else if (currentMonth > birthMonth) {
     months = currentMonth - birthMonth;
   } else {
